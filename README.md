@@ -10,3 +10,9 @@ add sample data
 - add handgun, armalite, bolt
 
 add read and write functionality to inventory.json
+
+add CRUD functions
+- index
+- show
+- update
+- destroy
