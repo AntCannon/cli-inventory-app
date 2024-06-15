@@ -1,0 +1,12 @@
+{
+  "name": "cli-inventory-app",
+  "version": "1.0.0",
+  "description": "firearm supply inventory app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Anthony Cannonier",
+  "license": "ISC"
+}
