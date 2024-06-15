@@ -1,5 +1,8 @@
 const { readJSONFile, writeJSONFile } = require('../utils/helpers')
-const { listItems } = require('../utils/utils')
+const {
+  listItems,
+  show
+} = require('../utils/utils')
 
 const inform = console.log
 const inventory = readJSONFile('./data', 'inventory.json')
@@ -12,7 +15,8 @@ function run() {
       listItems(inventory)
       break
     case "show":
-
+      inform(show(inventory, process.argv[3]))
+      break
   }
 }
 

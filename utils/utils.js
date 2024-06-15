@@ -6,6 +6,27 @@ function listItems(data) {
   console.log(list)
 }
 
+function show(inventory, itemName) {
+  const display = {
+    name: true,
+    priceInCents: true,
+    inStock: true,
+    fireModes: false,
+    caliber: true,
+    threadedBarrel: false,
+    opticsMount: false
+    
+  }
+  const item = inventory.find(({name}) => name === itemName)
+  const info = []
+  for (let key in item) {
+    if (display[key]) info.push(`${key}: ${item[key]}`)
+  }
+
+  return info.join(" ")
+}
+
 module.exports = {
-  listItems
+  listItems,
+  show
 }
