@@ -8,3 +8,5 @@ Add node fs
 add sample data
 - inventory.json
 - add handgun, armalite, bolt
+
+add read and write
