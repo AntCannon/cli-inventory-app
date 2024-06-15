@@ -1,6 +1,7 @@
-const { readJSONFile } = require('../utils/helpers')
+const { readJSONFile, writeJSONFile } = require('../utils/helpers')
 
 const inform = console.log
+writeJSONFile('./data', 'inventory.json', {TEST: true})
 inform(readJSONFile('./data', 'inventory.json'))
 
 function run() {

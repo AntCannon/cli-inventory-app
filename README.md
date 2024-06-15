@@ -9,4 +9,4 @@ add sample data
 - inventory.json
 - add handgun, armalite, bolt
 
-add read and write
+add read and write functionality to inventory.json
