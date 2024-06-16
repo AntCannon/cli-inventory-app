@@ -1,7 +1,8 @@
 const { readJSONFile, writeJSONFile } = require('../utils/helpers')
 const {
   listItems,
-  show
+  show,
+  edit
 } = require('../utils/utils')
 
 const inform = console.log
@@ -16,6 +17,9 @@ function run() {
       break
     case "show":
       inform(show(inventory, process.argv[3]))
+      break
+    case "update":
+      edit(inventory, process.argv[3], process.argv[4], process.argv[5])
       break
   }
 }

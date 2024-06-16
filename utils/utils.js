@@ -1,3 +1,5 @@
+const inform = console.log
+
 function listItems(data) {
   const list = []
   for (let item of data) {
@@ -26,7 +28,17 @@ function show(inventory, itemName) {
   return info.join(" ")
 }
 
+function edit(inventory, itemName, property, value) {
+  const index = inventory.findIndex(({name}) => name === itemName)
+  if (index > -1) {
+    inventory[index][property] = value
+  } else {
+      inform("No item with that name")
+  }
+}
+
 module.exports = {
   listItems,
-  show
+  show,
+  edit
 }
