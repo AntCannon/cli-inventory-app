@@ -32,8 +32,11 @@ function edit(inventory, itemName, property, value) {
   const index = inventory.findIndex(({name}) => name === itemName)
   if (index > -1) {
     inventory[index][property] = value
+    inform(`${itemName} successfully updated`)
+    return inventory
   } else {
       inform("No item with that name")
+    return inventory
   }
 }
 

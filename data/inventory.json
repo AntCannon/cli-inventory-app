@@ -8,7 +8,8 @@
     ],
     "caliber": "9mm",
     "threadedBarrel": false,
-    "opticsMount": false
+    "opticsMount": false,
+    "sights": "false"
   },
   {
     "name": "civilian armalite rifle",

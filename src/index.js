@@ -6,21 +6,30 @@ const {
 } = require('../utils/utils')
 
 const inform = console.log
-const inventory = readJSONFile('./data', 'inventory.json')
 
 function run() {
-  
-  switch (process.argv[2]) {
+  const action = process.argv[2]
+  const firearm = process.argv[3]
+  const inventory = readJSONFile('./data', 'inventory.json')
+  let writeToFile = false
+  let updatedInventory = []
+
+  switch (action) {
     case "index":
       inform(inventory)
       listItems(inventory)
       break
     case "show":
-      inform(show(inventory, process.argv[3]))
+      inform(show(inventory, firearm))
       break
     case "update":
-      edit(inventory, process.argv[3], process.argv[4], process.argv[5])
+      updatedInventory = edit(inventory, firearm, process.argv[4], process.argv[5])
+      writeToFile = true
       break
+  }
+
+  if (writeToFile) {
+    writeJSONFile('./data', 'inventory.json', updatedInventory)
   }
 }
 
