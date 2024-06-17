@@ -9,6 +9,12 @@ function centsToDollars(cents) {
 
 function addToCart(inventory, cart, itemName) {
   const item = getItemByName(inventory, itemName)
+  const cartItem = {
+    id: item.id,
+    item,
+    count: cart.find(({id}) => id === item.id).count + 1 || 1
+  }
+  // update cart item count
   cart.push(item)
   inform(`${itemName} added to cart! Continue shopping.`)
   return cart

@@ -1,8 +1,10 @@
 [
   {
     "name": "civilian armalite rifle",
+    "id": "ar15",
     "priceInCents": 900000,
     "inStock": "true",
+    "stock": 5,
     "fireModes": [
       "semiAutomatic"
     ],
@@ -12,8 +14,10 @@
   },
   {
     "name": "bolt action rifle",
+    "id": "kr98",
     "priceInCents": 700000,
     "inStock": "true",
+    "stock": 10,
     "fireModes": [
       "single"
     ],
@@ -23,8 +27,10 @@
   },
   {
     "name": "handgun",
+    "id": "xr92",
     "priceInCents": 50000,
     "inStock": "true",
+    "stock": 20,
     "fireModes": [
       "semiAutomatic"
     ],
@@ -36,6 +42,8 @@
   {
     "name": "1911",
     "id": "KbTI",
+    "inStock": true,
+    "stock": 19,
     "priceInCents": "119999",
     "caliber": "9mm"
   }
