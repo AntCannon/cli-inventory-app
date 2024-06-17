@@ -10,7 +10,8 @@ const {
 } = require('../utils/utils')
 
 const {
-  addToCart
+  addToCart,
+  getCartTotal
 } = require('../utils/shopping')
 
 const inform = console.log
@@ -59,7 +60,12 @@ function run() {
     case "addToCart":
       updatedCart = addToCart(inventory, cart, firearm)
       inform(cart)
+      inform(getCartTotal(updatedCart))
       writeToCart = true
+      break
+    case "cartTotal":
+      inform(getCartTotal(cart))
+      break
   }
 
 

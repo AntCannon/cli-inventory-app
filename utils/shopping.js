@@ -3,6 +3,10 @@ const {
 } = require('./inventory')
 const inform = console.log
 
+function centsToDollars(cents) {
+  return '$'+(cents/100).toFixed(2)
+}
+
 function addToCart(inventory, cart, itemName) {
   const item = getItemByName(inventory, itemName)
   cart.push(item)
@@ -10,6 +14,12 @@ function addToCart(inventory, cart, itemName) {
   return cart
 }
 
+function getCartTotal(cart) {
+  const total = cart.reduce((sum, {priceInCents}) => sum + +priceInCents, 0)
+  return centsToDollars(total)
+}
+
 module.exports ={
-  addToCart
+  addToCart,
+  getCartTotal
 }
