@@ -1,5 +1,16 @@
 [
   {
+    "name": "handgun",
+    "priceInCents": 50000,
+    "inStock": "true",
+    "fireModes": [
+      "semiAutomatic"
+    ],
+    "caliber": "9mm",
+    "threadedBarrel": false,
+    "opticsMount": false
+  },
+  {
     "name": "civilian armalite rifle",
     "priceInCents": 900000,
     "inStock": "true",
@@ -20,23 +31,5 @@
     "caliber": ".308",
     "threadedBarrel": true,
     "opticsMount": true
-  },
-  {
-    "name": "handgun",
-    "priceInCents": 50000,
-    "inStock": "true",
-    "fireModes": [
-      "semiAutomatic"
-    ],
-    "caliber": "9mm",
-    "threadedBarrel": false,
-    "opticsMount": false,
-    "sights": "false"
-  },
-  {
-    "name": "1911",
-    "id": "KbTI",
-    "priceInCents": "119999",
-    "caliber": "9mm"
   }
 ]

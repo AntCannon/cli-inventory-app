@@ -6,9 +6,8 @@ function readJSONFile(path, fileName) {
 }
 
 function writeJSONFile(path, fileName, data) {
-  const collection = readJSONFile(path, fileName)
-  collection.push(data)
-  return writeFileSync(`${path}/${fileName}`, JSON.stringify(collection), {encode: "utf-8"})
+  data = JSON.stringify(data)
+  return writeFileSync(`${path}/${fileName}`, data, {encode: "utf-8"})
 }
 
 module.exports = {
