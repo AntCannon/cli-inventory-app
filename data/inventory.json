@@ -1,17 +1,5 @@
 [
   {
-    "name": "handgun",
-    "priceInCents": 50000,
-    "inStock": "true",
-    "fireModes": [
-      "semiAutomatic"
-    ],
-    "caliber": "9mm",
-    "threadedBarrel": false,
-    "opticsMount": false,
-    "sights": "false"
-  },
-  {
     "name": "civilian armalite rifle",
     "priceInCents": 900000,
     "inStock": "true",

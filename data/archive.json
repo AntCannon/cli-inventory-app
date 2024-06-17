@@ -1,0 +1,16 @@
+[
+  [
+    {
+      "name": "handgun",
+      "priceInCents": 50000,
+      "inStock": "true",
+      "fireModes": [
+        "semiAutomatic"
+      ],
+      "caliber": "9mm",
+      "threadedBarrel": false,
+      "opticsMount": false,
+      "sights": "false"
+    }
+  ]
+]

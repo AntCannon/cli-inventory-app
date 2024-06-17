@@ -15,4 +15,5 @@ add CRUD functions
 - index
 - show
 - update
+npm run update `itemName` `property` `value`
 - destroy

@@ -36,12 +36,27 @@ function edit(inventory, itemName, property, value) {
     return inventory
   } else {
       inform("No item with that name")
-    return inventory
+      return inventory
+  }
+}
+
+function destroy(inventory, archive, itemName) {
+  const index = inventory.findIndex(({name}) => name === itemName)
+
+  if (index > -1) {
+    const archivedFirearm = inventory.splice(index, 1)
+    archive.push(archivedFirearm)
+    inform(`${itemName} moved from inventory and archived. Run restore to move archived items into inventory`)
+    return [inventory, archive]
+  } else {
+      inform("No item with that name. No changes have been made.")
+      return inventory
   }
 }
 
 module.exports = {
   listItems,
   show,
-  edit
+  edit,
+  destroy
 }
