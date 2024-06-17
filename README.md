@@ -34,3 +34,7 @@ npm run restore `itemName`
 - create
 create a new firearm for the inventory
 npm run create `itemName` `itemPrice` `itemCaliber`
+
+### Technology
+nanoid - creates ids for created firearms.
+node:fs - read from and write to json files.
