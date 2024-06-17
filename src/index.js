@@ -3,7 +3,8 @@ const {
   listItems,
   show,
   edit,
-  destroy
+  destroy,
+  restore
 } = require('../utils/utils')
 
 const inform = console.log
@@ -34,6 +35,12 @@ function run() {
       [updatedInventory, updatedArchive] = destroy(inventory, archive, firearm)
       writeToFile = true
       writeToArchive = true
+      break
+    case "restore":
+      [updatedArchive, updatedInventory] = restore(archive, inventory, firearm)
+      writeToFile = true
+      writeToArchive = true
+      break
   }
 
 
