@@ -9,9 +9,13 @@
     "show": "node src/index.js show",
     "update": "node src/index.js edit",
     "destroy": "node src/index.js destroy",
-    "restore": "node src/index.js restore"
+    "restore": "node src/index.js restore",
+    "create": "node src/index.js create"
   },
   "keywords": [],
   "author": "Anthony Cannonier",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^3.3.7"
+  }
 }

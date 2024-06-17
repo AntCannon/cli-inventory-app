@@ -1,3 +1,4 @@
+const { nanoid } = require("nanoid")
 const inform = console.log
 
 function listItems(data) {
@@ -68,10 +69,24 @@ function restore(archive, inventory, itemName) {
   }
 }
 
+function create(inventory, itemName, itemPrice, itemCaliber) {
+  const firearm = {
+    name: itemName,
+    id: nanoid(4),
+    priceInCents: itemPrice,
+    caliber: itemCaliber
+  }
+
+  inventory.push(firearm)
+  inform(`Added ${itemName} to inventory`)
+  return inventory
+}
+
 module.exports = {
   listItems,
   show,
   edit,
   destroy,
-  restore
+  restore,
+  create
 }

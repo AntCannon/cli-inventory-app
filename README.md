@@ -29,4 +29,8 @@ npm run destroy `itemName`
 
 - restore
 moves item from archive to inventory.
-npm run restore `itemName`
+npm run restore `itemName` 
+
+- create
+create a new firearm for the inventory
+npm run create `itemName` `itemPrice` `itemCaliber`

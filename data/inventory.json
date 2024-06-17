@@ -1,1 +1,42 @@
-[{"name":"civilian armalite rifle","priceInCents":900000,"inStock":"true","fireModes":["semiAutomatic"],"caliber":"5.56x45mm","threadedBarrel":false,"opticsMount":true},{"name":"bolt action rifle","priceInCents":700000,"inStock":"true","fireModes":["single"],"caliber":".308","threadedBarrel":true,"opticsMount":true},{"name":"handgun","priceInCents":50000,"inStock":"true","fireModes":["semiAutomatic"],"caliber":"9mm","threadedBarrel":false,"opticsMount":false,"sights":"false"}]
+[
+  {
+    "name": "civilian armalite rifle",
+    "priceInCents": 900000,
+    "inStock": "true",
+    "fireModes": [
+      "semiAutomatic"
+    ],
+    "caliber": "5.56x45mm",
+    "threadedBarrel": false,
+    "opticsMount": true
+  },
+  {
+    "name": "bolt action rifle",
+    "priceInCents": 700000,
+    "inStock": "true",
+    "fireModes": [
+      "single"
+    ],
+    "caliber": ".308",
+    "threadedBarrel": true,
+    "opticsMount": true
+  },
+  {
+    "name": "handgun",
+    "priceInCents": 50000,
+    "inStock": "true",
+    "fireModes": [
+      "semiAutomatic"
+    ],
+    "caliber": "9mm",
+    "threadedBarrel": false,
+    "opticsMount": false,
+    "sights": "false"
+  },
+  {
+    "name": "1911",
+    "id": "KbTI",
+    "priceInCents": "119999",
+    "caliber": "9mm"
+  }
+]

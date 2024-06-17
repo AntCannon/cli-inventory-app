@@ -4,7 +4,8 @@ const {
   show,
   edit,
   destroy,
-  restore
+  restore,
+  create
 } = require('../utils/utils')
 
 const inform = console.log
@@ -40,6 +41,12 @@ function run() {
       [updatedArchive, updatedInventory] = restore(archive, inventory, firearm)
       writeToFile = true
       writeToArchive = true
+      break
+    case "create":
+      const itemPrice = process.argv[4]
+      const itemCaliber = process.argv[5]
+      updatedInventory = create(inventory, firearm, itemPrice, itemCaliber)
+      writeToFile = true
       break
   }
 
