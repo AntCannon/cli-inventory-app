@@ -3,10 +3,15 @@ const {
   listItems,
   show,
   edit,
+  move,
   destroy,
   restore,
   create
 } = require('../utils/utils')
+
+const {
+  addToCart
+} = require('../utils/shopping')
 
 const inform = console.log
 
@@ -15,10 +20,13 @@ function run() {
   const firearm = process.argv[3]
   const inventory = readJSONFile('./data', 'inventory.json')
   const archive = readJSONFile('./data', 'archive.json')
+  const cart = readJSONFile('./cart', 'cart.json')
   let writeToFile = false
   let writeToArchive = false
+  let writeToCart = false
   let updatedInventory = []
   let updatedArchive = []
+  let updatedCart = []
 
   switch (action) {
     case "index":
@@ -48,6 +56,10 @@ function run() {
       updatedInventory = create(inventory, firearm, itemPrice, itemCaliber)
       writeToFile = true
       break
+    case "addToCart":
+      updatedCart = addToCart(inventory, cart, firearm)
+      inform(cart)
+      writeToCart = true
   }
 
 
@@ -57,6 +69,10 @@ function run() {
 
   if (writeToArchive) {
     writeJSONFile('./data', 'archive.json', updatedArchive)
+  }
+
+  if (writeToCart) {
+    writeJSONFile('./cart', 'cart.json', updatedCart)
   }
 
 }

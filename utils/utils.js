@@ -1,4 +1,5 @@
 const { nanoid } = require("nanoid")
+const { getItemByName } = require('./inventory')
 const inform = console.log
 
 function listItems(data) {
@@ -9,7 +10,7 @@ function listItems(data) {
   console.log(list)
 }
 
-function show(inventory, itemName) {
+function show(collection, itemName) {
   const display = {
     name: true,
     priceInCents: true,
@@ -20,7 +21,7 @@ function show(inventory, itemName) {
     opticsMount: false
     
   }
-  const item = inventory.find(({name}) => name === itemName)
+  const item = getItemByName(collection, itemName)
   const info = []
   for (let key in item) {
     if (display[key]) info.push(`${key}: ${item[key]}`)
@@ -29,15 +30,30 @@ function show(inventory, itemName) {
   return info.join(" ")
 }
 
-function edit(inventory, itemName, property, value) {
-  const index = inventory.findIndex(({name}) => name === itemName)
-  if (index > -1) {
-    inventory[index][property] = value
+function edit(collection, itemName, property, value) {
+  const item = getItemByName(collection, itemName)
+
+  if (item) {
+    item[property] = value
     inform(`${itemName} successfully updated`)
-    return inventory
+    return collection
   } else {
       inform("No item with that name")
-      return inventory
+      return collection
+  }
+}
+
+function move(sourceCollection, targetCollection, itemName) {
+  const index = sourceCollection.findIndex(({name}) => name === itemName)
+
+  if (index > -1) {
+    const archivedFirearm = sourceCollection.splice(index, 1)[0]
+    targetCollection.push(archivedFirearm)
+    inform(`${itemName} moved from sourceCollection and archived. Run restore to move archived items into sourceCollection.`)
+    return [sourceCollection, targetCollection]
+  } else {
+      inform("No item with that name. No changes have been made.")
+      return [sourceCollection, targetCollection]
   }
 }
 
@@ -86,6 +102,7 @@ module.exports = {
   listItems,
   show,
   edit,
+  move,
   destroy,
   restore,
   create
