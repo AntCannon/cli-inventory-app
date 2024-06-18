@@ -11,11 +11,11 @@ function addToCart(inventory, cart, itemName) {
   const item = getItemByName(inventory, itemName)
   
   const itemCartIndex = cart.findIndex(({id}) => id === item.id)
-  console.log(itemCartIndex)
 
   if (itemCartIndex > -1) {
     cart[itemCartIndex].quantity = cart[itemCartIndex].quantity + 1
-    inform(`${itemName} quantity updated to ${cart[itemCartIndex].quantity}`)
+    const itemTotal = item.priceInCents * cart[itemCartIndex].quantity
+    inform(`${itemName} quantity updated to ${cart[itemCartIndex].quantity} item total price ${itemTotal}. Continue shopping.`)
   } else {
     const cartItem = {
       id: item.id,
