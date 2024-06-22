@@ -7,10 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "index": "node src/index.js index",
     "show": "node src/index.js show",
-    "update": "node src/index.js edit",
+    "update": "node src/index.js update",
     "destroy": "node src/index.js destroy",
     "restore": "node src/index.js restore",
-    "create": "node src/index.js create"
+    "create": "node src/index.js create",
+    "addToCart": "node src//index.js addToCart"
   },
   "keywords": [],
   "author": "Anthony Cannonier",
